@@ -248,10 +248,6 @@ The following attributes can be used with any dataset:
   - type: Optional *(real)*
   - description: Maximum of the data.
 
-- `gridDataOrder`:
-  - type: Optional *(string)*
-  - description: Used with HDF5 and any other storage medium where the storage order of multidimensional arrays can vary depending upon the language of the code interfaced to the API of the storage medium. Possible values are "C" indicating row major storage or "F" indicating column major order. Default if not present or blank is "F".
-
 External Mesh Fields Groups
 ===========================
 
@@ -321,6 +317,11 @@ where `Z` is the complex field, `f` is the Oscillation frequency, `t` is the tim
 - `RFphase`
   - type Optional *(real)*
   - description: Phase offset for oscillating fields. See the equation above. Default is zero. Note that the units are `2 pi` and not `radians`.
+
+- `axisLabels`
+  - type: Required *(string array)*
+  - description: Array of axis labels. See the OpenPMD standard for more details. For the fields here, and with Fortran-like ordering of the grid, the labels will be `["z", "y", "x"]` or `["z", "theta", "r"]`.
+For C-like ordering of the grid, the labels will be in opposite order.
 
 Per-grid `External Fields Group` Records
 ----------------------------------------
