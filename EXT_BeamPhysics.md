@@ -320,11 +320,12 @@ where `Z` is the complex field, `f` is the Oscillation frequency, `t` is the tim
 
 - `axisLabels`
   - type: Required *(string array)*
-  - description: Array of axis labels. See the OpenPMD standard for more details. For the fields here, and with Fortran-like ordering of the grid, the labels will be `["z", "y", "x"]` or `["z", "theta", "r"]`.
+  - description: Array of axis labels. See the OpenPMD standard for more details. 
+For the fields here, and with Fortran-like ordering of the grid, the labels will be `["z", "y", "x"]` or `["z", "theta", "r"]`.
 For C-like ordering of the grid, the labels will be in opposite order.
 
-Per-grid `External Fields Group` Records
-----------------------------------------
+`External Fields Group` Records
+-------------------------------
 
 **Note:** Each field component contains a 3-dimensional table giving the field on a grid. When using **(x, y, z)** field components, each component contains an **(x, y, z)** spatial grid. When using **(r, theta, z)** field components, each component contains an **(r, theta, z)** spatial grid. In this case, if the grid size in the `theta` direction is 1, the field is taken to be axially symmetric.
 
