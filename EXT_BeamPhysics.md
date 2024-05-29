@@ -318,6 +318,7 @@ where `Z` is the complex field, `f` is the Oscillation frequency, `t` is the tim
   - type Optional *(real)*
   - description: Phase offset for oscillating fields. See the equation above. Default is zero. Note that the units are `2 pi` and not `radians`.
 
+
 - `axisLabels`
   - type: Required *(string array)*
   - description: Array of axis labels. See the OpenPMD standard for more details. 
@@ -348,3 +349,5 @@ The components of `magneticField` will be either **(x, y, z)** representing `Ex`
 Each component contains a 3-dimensional table giving the field on a grid. 
 When using **(x, y, z)** components, each component contains a  **(x, y, z)** spatial grid. 
 When using **(r, theta, z)** components, each component contains a **(r, theta, z)** spatial grid. In this case, if the grid size in the `theta` direction is 1, the field is taken to be axially symmetric.
+
+
