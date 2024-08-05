@@ -731,8 +731,10 @@ The record's *data set* `<componentName>` must be replaced with an empty
 
 `shape` is a 1-dimensional array of `N` *(uint64)* elements, where `N` is the
 number of dimensions of the record. It contains the number of elements of each
-dimension that are replaced with a constant value. For `mesh` based records,
-the order of the `N` values must be identical to the axes in `axisLabels`.
+dimension that are replaced with a constant value.
+  - For `mesh` based records, the order of the `N` values must be identical to the axes in `axisLabels`.
+  - For `particle` records, the `shape` attribute can be skipped if there is *at least one more record* in the same particle group (species) that is non-constant or is constant and has the `shape` attribute.
+    Read-logic will then pick any other record to recover the `shape`.
 
 Other required attributes that where previously stored on the *data set* need
 to be added to the new sub-group as well.
